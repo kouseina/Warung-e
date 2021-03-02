@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%=title%></title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+        <link rel="stylesheet" href="../../assets/vendors/iconly/bold.css">
+
+        <link rel="stylesheet" href="../../assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" href="../../assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="../../assets/css/app.css">
+        <link rel="shortcut icon" href="../../assets/images/favicon.svg" type="image/x-icon"> 
+    </head>
+    
+    <body>
+        <div id="app">
+            <% include layouts/sidebar %>
+
+            <div id="main">
+                <header class="mb-3">
+                    <a href="#" class="burger-btn d-block d-xl-none">
+                        <i class="bi bi-justify fs-3"></i>
+                    </a>
+                </header>
+
+                <div class="page-heading">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-md-1 order-last mb-3">
+                                <h3>Create Pembelian</h3>
+                            </div>
+                            <div class="col-12 col-md-6 order-md-2 order-first">
+                                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="/pembelian">Tabel</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Create Pembelian</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section id="basic-vertical-layouts">
+                        <div class="row match-height">
+                            <div class="col-md-6 col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Create Form</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <form class="form form-vertical" method="post" action="/pembelian" id="the-form">
+                                                <div class="form-body">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label for="first-name-vertical">Nama Barang</label>
+                                                                <input type="text" id="first-name-vertical"
+                                                                    class="form-control" name="nama_barang" required
+                                                                    placeholder="Masukkan Nama Barang...">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label for="first-name-vertical">Jumlah</label>
+                                                                <input type="number" id="first-name-vertical"
+                                                                    class="form-control" name="jumlah" required
+                                                                    placeholder="Masukkan Jumlah Barang...">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label for="first-name-vertical">Harga Satuan</label>
+                                                                <input type="number" id="first-name-vertical"
+                                                                    class="form-control" name="harga" required
+                                                                    placeholder="Masukkan Harga Satuan Barang...">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <div class="form-group">
+                                                                <label for="first-name-vertical">Status Pembayaran</label>
+                                                                
+                                                                <select class="form-select" name="status" required>
+                                                                    <option value="0" >Utang</option>
+                                                                    <option value="1" >Lunas</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-end">
+                                                            <input type="submit" value="Save"
+                                                                class="btn btn-primary me-1 mb-1"></input>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="../../assets/js/main.js"></script>
+        
+    </body>
+</html>
