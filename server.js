@@ -1,10 +1,11 @@
 var express = require("express"),
   path = require("path"),
-  bodyParser = require("body-parser"),
-  methodOverride = require("method-override"),
-  app = express(),
-  con = require("./config/db.js"),
-  expressValidator = require("express-validator");
+  session = require("express-session");
+(flash = require("express-flash")),
+  (methodOverride = require("method-override")),
+  (app = express()),
+  (con = require("./config/db.js")),
+  (expressValidator = require("express-validator"));
 
 const pembelianController = require("./controller/pembelianController");
 
@@ -27,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(methodOverride("_method"));
+app.use(session({ secret: "secretpass123456" }));
+app.use(flash());
 
 // include router
 const pembelianRouter = require("./routes/pembelianRouter");

@@ -67,6 +67,22 @@
                     </div>
                 </section>
 
+                <% if(messages.msg_info) { %>
+                    <div class="alert alert-success alert-dismissible show fade">
+                        <%= messages.msg_info %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                <% } %>
+
+                <% if(messages.msg_error) { %>
+                    <div class="alert alert-danger alert-dismissible show fade">
+                        <%= messages.msg_error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                <% } %>
+
                 <section class="section">
                     <div class="card">
                         <div class="card-header col-10">
@@ -110,8 +126,8 @@
                                         <td>
                                             <a class="a-inside edit" href="/pembelian/<%=data[i].id_pembelian%>/edit">Edit</a>
                                             &nbsp;
-                                            <form action="/pembelian/<%=data[i].id_pembelian%>?_method=DELETE" method="post">
-                                                <input type="submit" value="Delete" style="border: 0; margin: 0; padding: 0; color: #435ebe;">
+                                            <form class="d-inline-block" action="/pembelian/<%=data[i].id_pembelian%>?_method=DELETE" method="post">
+                                                <input class="bg-transparent" type="submit" value="Delete" style="border: 0; margin: 0; padding: 0; color: #435ebe;">
                                             </form>
                                         </td>
                                     </tr>

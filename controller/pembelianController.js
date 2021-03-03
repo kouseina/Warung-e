@@ -24,10 +24,11 @@ module.exports = {
   store: function(req, res) {
     Pembelian.create(req.con, req.body, function(err) {
       if (err) {
-        console.log(err);
-        return next("Mysql error, check your query");
+        let errors_detail = ("Error Insert : %s ", err);
+        req.flash("msg_error", errors_detail);
       }
 
+      req.flash("msg_info", "Create customer success");
       res.redirect("/pembelian")
     })
   },
@@ -35,8 +36,8 @@ module.exports = {
   edit: function(req, res) {
     Pembelian.getById(req.con, req.params.id, function(err, rows) {
       if (err) {
-        console.log(err);
-        return next("Mysql error, check your query");
+        var errors_detail = ("Error Update : %s ", err);
+        req.flash("msg_error", errors_detail);
       }
 
       //if pembelian not found
@@ -52,13 +53,23 @@ module.exports = {
 
   update: function(req, res) {
     Pembelian.update(req.con, req.body, req.params.id, function(err) {
-      res.redirect("/pembelian")
+      if(!err) {
+        req.flash("msg_info", "Update customer success");
+        res.redirect("/pembelian")
+      }
     })
   },
 
   destroy: function(req, res, next) {
     Pembelian.destroy(req.con, req.params.id, function(err) {
-      res.redirect("/pembelian")
+      if (err) {
+        var errors_detail = ("Error Delete : %s ", err);
+        req.flash("msg_error", errors_detail);
+        res.redirect("/pembelian")
+      } else {
+        req.flash("msg_info", "Delete Customer Success");
+        res.redirect("/pembelian")
+      }
     })
   }
 }
