@@ -1,4 +1,4 @@
-This is an example of RESTful CRUD in Node.js n mySQL.
+This is an example of RESTful CRUD with MVC in Node.js n mySQL.
 
 Live DEMO: -
 
