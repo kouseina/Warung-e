@@ -28,7 +28,7 @@ module.exports = {
         req.flash("msg_error", errors_detail);
       }
 
-      req.flash("msg_info", "Create customer success");
+      req.flash("msg_info", "Create pembelian success");
       res.redirect("/pembelian")
     })
   },
@@ -54,7 +54,7 @@ module.exports = {
   update: function(req, res) {
     Pembelian.update(req.con, req.body, req.params.id, function(err) {
       if(!err) {
-        req.flash("msg_info", "Update customer success");
+        req.flash("msg_info", "Update pembelian success");
         res.redirect("/pembelian")
       }
     })
@@ -67,7 +67,7 @@ module.exports = {
         req.flash("msg_error", errors_detail);
         res.redirect("/pembelian")
       } else {
-        req.flash("msg_info", "Delete Customer Success");
+        req.flash("msg_info", "Delete pembelian Success");
         res.redirect("/pembelian")
       }
     })
