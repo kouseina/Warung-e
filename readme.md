@@ -1,4 +1,5 @@
 This is an example of RESTful CRUD with MVC in Node.js n mySQL.
+
 for template : https://github.com/zuramai/mazer
 
 Live DEMO: -
